@@ -1,0 +1,64 @@
+	import java.text.DecimalFormat;
+	import java.util.Scanner;
+	//Imports the decimal format for integers to be used
+
+	 public class AccuracyOption {
+		 public static String pattern;
+		 //The class and method is set to be referenced from the main method
+		 
+		 static DecimalFormat dec1;
+		 //The decimal format then had to be assigned in order for the decimal place to be assigned with the pattern
+		 
+		 public static AccuracyOption AccuracyOption;		
+		 boolean exit;
+		 public static void main (String[] args) {
+			 AccuracyOption = new AccuracyOption();
+			 //Using the class a boolean function set in order for a static class to be referenced within the program
+			 
+		 }
+
+		 public static void setaccuracy() {
+			 //A method is set up in order for the pattern to be set with each decimal point
+
+			 System.out.println("Set your decimal place");
+			 Scanner input = new Scanner (System.in);
+			 //The scanner function is then set in order for the user to input their choice 
+			 
+			 int x = input.nextInt();	
+			 switch (x)
+			 //A switch statement is set in place in order for the users input (x) to be compared against the decimal place set with the valid pattern
+			 {
+			 case 1:
+				 System.out.print("Set decimal place to 1");
+				 String pattern = "#.#"; //1 decimal place
+				 dec1 = new DecimalFormat(pattern);
+				 //	String output = myFormatter.format(value);
+				 break;
+			 case 2:
+				 System.out.print("Set decimal place to 2");
+				 String pattern1 = "##.##"; //2 decimal places
+				 dec1 = new DecimalFormat(pattern1);
+				 //	String output = myFormatter.format(value);
+				 break;
+			 case 3:
+				 System.out.print("Set decimal place to 3");
+				 String pattern2 = "###.###"; //3 decimal places
+				 dec1 = new DecimalFormat(pattern2);
+				 //	String output = myFormatter.format(value);
+			 case 4:
+				 System.out.print("Set decimal place to 4");
+				 String pattern3 = "####.####"; //4 decimal places
+				 dec1 = new DecimalFormat(pattern3);
+				 //	String output = myFormatter.format(value);
+			 case 5:
+				 System.out.print("Set decimal place to 5");
+				 String pattern4 = "#####.#####"; //5 decimal places
+				 dec1 = new DecimalFormat(pattern4);
+				 //	String output = myFormatter.format(value);
+			 }
+
+
+
+		 }
+
+	 }
