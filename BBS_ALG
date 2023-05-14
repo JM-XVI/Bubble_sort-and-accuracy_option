@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class Bubble {
+//import the scanner and created class named "Bubble"
+	static void bSort(int array[]){
+		// TODO Auto-generated method stub
+		
+		int a = array.length; //created the length of the array, set to any
+		int control = 0; //integer set to 0 of the array
+		for (int b = 0; b < a; b++){ //The array is processed and incremented if the  value compared in the array is less than the value
+			for (int c = 1; c < a; c++){ //The value then moves up each time and increments again
+				if (array[c-1] > array[c]){ //The end of the array moves down if the value meets a point where it cannot advance
+					control = array[c-1];
+					array[c-1] = array[c];
+					array[c] = control; //The array is then set on c once all of the values in the array have all been checked
+				}
+			}
+		}
+	}
+
+	public static void order() {
+		//A method for the program is then set for the user to view 
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("How many numbers are contained wihtin your list");
+		int a = in.nextInt();
+		int[] array = new int[a];
+		/*Scanner function is then used for the user to input their number of integers that will be in the list
+		 * The variable of a is then set within the array for the integer values*/
+
+		System.out.println("Enter your desired numbers, press enter after each number you input!");
+
+		for (int b = 0; b < a; b++){
+			array[b] = in.nextInt();
+			//variable b is then set to the numbers the user input their actual values that they want to sort
+		}
+
+		System.out.printf("\nThis was you inital set of numbers: ");
+
+		for (int z = 0; z < a; z++){
+			System.out.printf("%s ", array[z]);
+			//This allows for the users previous non - ordered list to be shown using a new variable of z accessing the array
+		}
+
+		System.out.println();
+		System.out.printf("\nThis is the ordered display of your inital list: ");
+		//presents the user to with the line of their ordered list 
+		
+		bSort(array);
+		for (int c = 0; c < a; c ++)
+			System.out.printf("%s ", array[c]);
+		System.out.printf("\n \n");
+		/*The method of bsort is then referenced for the sorted array allowing for the menu to reference the program
+		 *a for loop is then set to print the correct order of the values and allows for it to printed out on a new line*/
+	}
+
+
+
+}
+
